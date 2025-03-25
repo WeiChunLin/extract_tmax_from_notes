@@ -23,7 +23,7 @@ def extract_max_values_from_notes_USC(input_excel: str, output_excel: str):
         # Define regex patterns
         tmax_pattern = r'(Highest IOP|Max Pressure|IOP Max|Pretreatment IOP up to|IOP as high as|Max IOP|IOP max on no drops|Tmax)\D{0,20}?(\d+)(?:[^\d]{0,10}(\d+))?'
         ntg_pattern = r'\b(?:ntg|ltg|normal tension|low tension)\b'
-        additional_iop_pattern = r'Risk factors:\s*IOP\((\d+)\s*/\s*(\d+)\)[),]'
+        additional_iop_pattern = r'Risk factors\s*IOP\((\d+)\s*/\s*(\d+)\)[),]'
 
         # Extract Tmax values
         df_tmax = df['clinical_notes'].str.extract(tmax_pattern, flags=re.IGNORECASE)
